@@ -23,4 +23,4 @@ You can view the live site here:
 
 ##  Contact
 Let's connect! 
-* **GitHub:** 
+* **GitHub:** https://github.com/melissa628
