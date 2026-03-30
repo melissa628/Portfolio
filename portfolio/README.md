@@ -52,5 +52,4 @@ Vous pouvez consulter le site ici :
 
 ##  Contact
 Restons en contact !
-* **LinkedIn :** [Lien vers votre profil]
 * **GitHub :** https://github.com/melissa628
