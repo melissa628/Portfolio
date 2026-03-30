@@ -21,6 +21,6 @@ You can view the live site here:
 * `portfolio.css` - Custom styles and layouts.
 * `portfolio.js` - Interactive elements and logic.
 
-## 📧 Contact
+##  Contact
 Let's connect! 
 * **GitHub:** 
