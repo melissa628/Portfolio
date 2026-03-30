@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melissa Ibegdidene — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF7F2;
+    --surface: #ffffff;
+    --primary: #C4714A;
+    --primary-light: #D4906A;
+    --text-main: #2C1A10;
+    --text-muted: #6B4C3B;
+    --border: rgba(196, 113, 74, 0.15);
+    --card-shadow: 0 4px 30px rgba(61,43,31,0.06);
+    --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  [data-theme="dark"] {
+    --bg: #120E0C;
+    --surface: #1E1714;
+    --primary: #D4906A;
+    --primary-light: #E8DDD0;
+    --text-main: #FAF7F2;
+    --text-muted: #9B7B6A;
+    --border: rgba(212, 144, 106, 0.1);
+    --card-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    transition: background 0.5s ease, color 0.5s ease;
+    overflow-x: hidden;
+  }
+
+  /* UTILS : LANGUE */
+  [lang="en"] { display: none; }
+  body.lang-en [lang="fr"] { display: none; }
+  body.lang-en [lang="en"] { display: block; }
+  span.lang-en { display: none; }
+  body.lang-en span.lang-en { display: inline; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 1.2rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--bg); opacity: 0.95;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600; color: var(--primary); text-decoration: none;
+  }
+  .nav-controls { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-muted); text-decoration: none; transition: var(--transition);
+  }
+  .nav-links a:hover { color: var(--primary); }
+  .icon-btn { background: none; border: none; cursor: pointer; font-size: 1.1rem; color: var(--primary); }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 0 4rem; position: relative; }
+  .hero-content { position: relative; z-index: 1; max-width: 700px; }
+  .hero-tag {
+    display: inline-block; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--primary); margin-bottom: 1.5rem; padding: 0.4rem 1rem;
+    border: 1px solid var(--primary); border-radius: 30px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 300; line-height: 1.1; color: var(--text-main);
+  }
+  .hero h1 em { font-style: italic; color: var(--primary); }
+  .hero-sub { margin-top: 1.5rem; font-size: 1.1rem; color: var(--text-muted); max-width: 500px; }
+
+  /* SECTIONS */
+  section { padding: 8rem 4rem; }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif; font-size: 3rem;
+    font-weight: 300; margin-bottom: 3rem;
+  }
+  
+  /* CARDS */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .card {
+    background: var(--surface); padding: 2.5rem; border-radius: 16px;
+    border: 1px solid var(--border); box-shadow: var(--card-shadow);
+    transition: var(--transition);
+  }
+  .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+
+  /* SKILLS CHIPS */
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+  .skill-chip {
+    padding: 0.6rem 1.2rem; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 8px; font-size: 0.85rem;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-block; padding: 1rem 2.5rem; border-radius: 4px;
+    text-decoration: none; text-transform: uppercase; font-size: 0.8rem;
+    letter-spacing: 0.1em; transition: var(--transition);
+  }
+  .btn-primary { background: var(--primary); color: white; }
+  .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">M. Ibegdidene</a>
+  <div class="nav-controls">
+    <ul class="nav-links">
+      <li><a href="#about"><span lang="fr">À propos</span><span lang="en">About</span></a></li>
+      <li><a href="#projects"><span lang="fr">Projets</span><span lang="en">Projects</span></a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="icon-btn" id="lang-toggle" title="Switch Language">🌐</button>
+    <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">
+      <span lang="fr">Disponible pour opportunités</span>
+      <span lang="en">Open for opportunities</span>
+    </span>
+    <h1 lang="fr">Bonjour, je suis <em>Melissa</em></h1>
+    <h1 lang="en">Hello, I am <em>Melissa</em></h1>
+    <p class="hero-sub">
+      <span lang="fr">Étudiante en génie logiciel à Béjaïa, spécialisée dans la création de solutions numériques élégantes et performantes.</span>
+      <span lang="en">Software Engineering student at Béjaïa, specialized in crafting elegant and high-performance digital solutions.</span>
+    </p>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title"><span lang="fr">Qui suis-<em>je</em> ?</span><span lang="en">About <em>me</em></span></h2>
+  <div class="grid">
+    <div class="card">
+      <p lang="fr">Étudiante en ING 3, je transforme des concepts complexes en applications fluides. Passionnée par l'architecture logicielle et le web design.</p>
+      <p lang="en">Senior SE student, I turn complex concepts into fluid applications. Passionate about software architecture and web design.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom:1rem">Compétences</h3>
+      <div class="skills-grid">
+        <div class="skill-chip">C++</div>
+        <div class="skill-chip">Java</div>
+        <div class="skill-chip">Oracle SQL</div>
+        <div class="skill-chip">JavaScript</div>
+        <div class="skill-chip">HTML/CSS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Projets</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Réservation Universitaire</h3>
+      <p class="hero-sub" style="font-size:0.9rem">Web / SQL / JS</p>
+    </div>
+    <div class="card">
+      <h3>Gestion de Vols</h3>
+      <p class="hero-sub" style="font-size:0.9rem">Java / OracleSQL</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="text-align: center;">
+  <h2 class="section-title"><span lang="fr">Travaillons <em>ensemble</em></span><span lang="en">Let's <em>work</em> together</span></h2>
+  <a href="mailto:melissa.ibegdidene@se.univ-bejaia.dz" class="btn btn-primary">Envoyer un mail</a>
+</section>
+
+<script>
+  // Theme Toggle Logic
+  const themeBtn = document.getElementById('theme-toggle');
+  const body = document.body;
+  
+  themeBtn.addEventListener('click', () => {
+    const isDark = body.getAttribute('data-theme') === 'dark';
+    body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    themeBtn.innerText = isDark ? '🌙' : '☀️';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  });
+
+  // Language Toggle Logic
+  const langBtn = document.getElementById('lang-toggle');
+  langBtn.addEventListener('click', () => {
+    body.classList.toggle('lang-en');
+    localStorage.setItem('lang', body.classList.contains('lang-en') ? 'en' : 'fr');
+  });
+
+  // Load Preferences
+  if(localStorage.getItem('theme') === 'dark') {
+    body.setAttribute('data-theme', 'dark');
+    themeBtn.innerText = '☀️';
+  }
+  if(localStorage.getItem('lang') === 'en') {
+    body.classList.add('lang-en');
+  }
+</script>
+
+</body>
+</html>

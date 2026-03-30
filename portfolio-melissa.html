@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melissa Ibegdidene — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --sand: #E8DDD0;
+    --terracotta: #C4714A;
+    --terra-light: #D4906A;
+    --brown: #3D2B1F;
+    --brown-mid: #6B4C3B;
+    --text: #2C1A10;
+    --muted: #9B7B6A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 1.2rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(250, 247, 242, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(196, 113, 74, 0.15);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--terracotta); text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--brown-mid); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 80% 50%, rgba(196,113,74,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 50% at 10% 80%, rgba(212, 144, 106, 0.08) 0%, transparent 50%);
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    right: 6rem; top: 50%; transform: translateY(-50%);
+    width: 380px; height: 380px;
+    border-radius: 50%;
+    border: 1px solid rgba(196,113,74,0.2);
+    box-shadow: 0 0 0 40px rgba(196,113,74,0.04), 0 0 0 80px rgba(196,113,74,0.02);
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 680px; }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 1.5rem;
+    padding: 0.35rem 1rem;
+    border: 1px solid rgba(196,113,74,0.35);
+    border-radius: 20px;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 7vw, 5.5rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--brown);
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+  .hero h1 em { font-style: italic; color: var(--terracotta); }
+  .hero-sub {
+    margin-top: 1.5rem; font-size: 1.05rem; line-height: 1.7;
+    color: var(--brown-mid); max-width: 480px;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .hero-cta {
+    margin-top: 2.8rem; display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+  .btn-primary {
+    padding: 0.85rem 2rem;
+    background: var(--terracotta); color: white;
+    border: none; border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--terra-light); transform: translateY(-2px); }
+  .btn-outline {
+    padding: 0.85rem 2rem;
+    background: transparent; color: var(--brown-mid);
+    border: 1px solid var(--sand);
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--terracotta); color: var(--terracotta); transform: translateY(-2px); }
+
+  /* SECTIONS */
+  section { padding: 7rem 4rem; }
+  .section-label {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 0.8rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .section-label::after {
+    content: ''; flex: 0 0 40px; height: 1px; background: var(--terracotta); opacity: 0.5;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300; color: var(--brown); margin-bottom: 3rem;
+  }
+  .section-title em { font-style: italic; color: var(--terracotta); }
+
+  /* ABOUT */
+  .about { background: var(--cream); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .about-text p {
+    font-size: 1.05rem; line-height: 1.9; color: var(--brown-mid); margin-bottom: 1.2rem;
+  }
+  .about-text p strong { color: var(--terracotta); font-weight: 500; }
+  .about-card {
+    background: white;
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 30px rgba(61,43,31,0.06);
+  }
+  .about-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 400;
+    color: var(--brown); margin-bottom: 1.5rem;
+  }
+  .about-detail { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 1rem; }
+  .about-detail-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--terracotta); margin-top: 0.45rem; flex-shrink: 0;
+  }
+  .about-detail-text { font-size: 0.9rem; color: var(--brown-mid); line-height: 1.6; }
+  .about-detail-text strong { color: var(--brown); font-weight: 500; }
+
+  /* SKILLS */
+  .skills { background: var(--brown); }
+  .skills .section-label { color: var(--terra-light); }
+  .skills .section-label::after { background: var(--terra-light); }
+  .skills .section-title { color: var(--cream); }
+  .skills .section-title em { color: var(--terra-light); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem; }
+  .skill-chip {
+    background: rgba(250,247,242,0.06);
+    border: 1px solid rgba(250,247,242,0.12);
+    border-radius: 8px; padding: 1.2rem 1rem;
+    text-align: center;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .skill-chip:hover {
+    background: rgba(196,113,74,0.15);
+    border-color: rgba(196,113,74,0.4);
+    transform: translateY(-3px);
+  }
+  .skill-icon { font-size: 1.6rem; margin-bottom: 0.5rem; display: block; }
+  .skill-name { font-size: 0.82rem; color: rgba(250,247,242,0.8); letter-spacing: 0.05em; }
+
+  /* PROJECTS */
+  .projects { background: var(--cream); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.8rem; }
+  .project-card {
+    background: white;
+    border: 1px solid var(--sand);
+    border-radius: 12px; overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+  }
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(61,43,31,0.12);
+  }
+  .project-card-header {
+    height: 160px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem; position: relative; overflow: hidden;
+  }
+  .project-card-header::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--c1, #C4714A22), var(--c2, #E8DDD022));
+  }
+  .project-card-body { padding: 1.6rem; }
+  .project-status {
+    display: inline-block;
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 0.2rem 0.7rem; border-radius: 20px; margin-bottom: 0.8rem;
+  }
+  .status-done { background: rgba(196,113,74,0.12); color: var(--terracotta); }
+  .status-upcoming { background: rgba(107,76,59,0.1); color: var(--brown-mid); }
+  .project-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 400;
+    color: var(--brown); margin-bottom: 0.6rem;
+  }
+  .project-desc { font-size: 0.88rem; line-height: 1.65; color: var(--muted); margin-bottom: 1.2rem; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.2rem; }
+  .project-tag {
+    font-size: 0.72rem; letter-spacing: 0.06em;
+    padding: 0.25rem 0.65rem;
+    background: var(--cream); border: 1px solid var(--sand);
+    border-radius: 4px; color: var(--brown-mid);
+  }
+  .project-link {
+    font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--terracotta); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    transition: gap 0.2s;
+  }
+  .project-link:hover { gap: 0.7rem; }
+
+  /* CONTACT */
+  .contact { background: var(--sand); }
+  .contact-inner { max-width: 680px; }
+  .contact-desc { font-size: 1.05rem; line-height: 1.8; color: var(--brown-mid); margin-bottom: 2.5rem; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group.full { grid-column: 1 / -1; }
+  .form-group label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brown-mid); }
+  .form-group input,
+  .form-group textarea {
+    padding: 0.85rem 1rem;
+    background: white; border: 1px solid rgba(61,43,31,0.15);
+    border-radius: 6px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    color: var(--text); outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: var(--terracotta); }
+  .form-group textarea { height: 130px; resize: vertical; }
+  .contact-email {
+    margin-top: 2rem;
+    display: flex; align-items: center; gap: 0.8rem;
+    font-size: 0.9rem; color: var(--brown-mid);
+  }
+  .contact-email a { color: var(--terracotta); text-decoration: none; }
+  .contact-email a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    background: var(--brown); color: rgba(250,247,242,0.5);
+    padding: 2rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.8rem;
+  }
+  footer a { color: var(--terra-light); text-decoration: none; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    section { padding: 5rem 1.5rem; }
+    .hero { padding: 0 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.8rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">M. Ibegdidene</a>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="hero-tag">Disponible pour des opportunités</span>
+    <h1>Bonjour, je suis<br><em>Melissa</em></h1>
+    <p class="hero-sub">Étudiante en génie logiciel, passionnée par la création d'applications web et la résolution de problèmes concrets à travers le code.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">Voir mes projets</a>
+      <a href="#contact" class="btn-outline">Me contacter</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-label">À propos</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2 class="section-title">Qui suis-<em>je</em> ?</h2>
+      <p>Je suis <strong>Melissa Ibegdidene</strong>, étudiante en informatique spécialité génie logiciel à l'Université de Béjaïa. Curieuse et déterminée, j'aime construire des solutions numériques qui ont un vrai impact.</p>
+      <p>Mon parcours m'a permis de travailler sur des projets concrets allant de la gestion universitaire aux systèmes de réservation, en passant par des plateformes e-commerce. Je crois que le bon code, c'est celui qui sert les gens.</p>
+      <p>En dehors du code, je suis toujours en train d'apprendre — que ce soit une nouvelle technologie, un nouveau framework, ou simplement une meilleure façon de penser un problème.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-title">En bref</div>
+      <div class="about-detail">
+        <div class="about-detail-dot"></div>
+        <div class="about-detail-text"><strong>Formation :</strong> Génie Logiciel, Université de Béjaïa</div>
+      </div>
+      <div class="about-detail">
+        <div class="about-detail-dot"></div>
+        <div class="about-detail-text"><strong>Statut :</strong> Étudiante — ouverte aux stages & projets</div>
+      </div>
+      <div class="about-detail">
+        <div class="about-detail-dot"></div>
+        <div class="about-detail-text"><strong>Langues :</strong> Français, Arabe, Anglais</div>
+      </div>
+      <div class="about-detail">
+        <div class="about-detail-dot"></div>
+        <div class="about-detail-text"><strong>Centres d'intérêt :</strong> Développement web, bases de données, applications métier</div>
+      </div>
+      <div class="about-detail">
+        <div class="about-detail-dot"></div>
+        <div class="about-detail-text"><strong>GitHub :</strong> Bientôt disponible</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-label">Compétences</div>
+  <h2 class="section-title">Mes <em>technologies</em></h2>
+  <div class="skills-grid">
+    <div class="skill-chip"><span class="skill-icon">🐍</span><span class="skill-name">Python</span></div>
+    <div class="skill-chip"><span class="skill-icon">☕</span><span class="skill-name">Java</span></div>
+    <div class="skill-chip"><span class="skill-icon">⚡</span><span class="skill-name">JavaScript</span></div>
+    <div class="skill-chip"><span class="skill-icon">🔷</span><span class="skill-name">TypeScript</span></div>
+    <div class="skill-chip"><span class="skill-icon">🌐</span><span class="skill-name">HTML</span></div>
+    <div class="skill-chip"><span class="skill-icon">🎨</span><span class="skill-name">CSS</span></div>
+    <div class="skill-chip"><span class="skill-icon">⚙️</span><span class="skill-name">C++</span></div>
+    <div class="skill-chip"><span class="skill-icon">🗄️</span><span class="skill-name">SQL / OracleSQL</span></div>
+    <div class="skill-chip"><span class="skill-icon">🍃</span><span class="skill-name">NoSQL</span></div>
+    <div class="skill-chip"><span class="skill-icon">🖥️</span><span class="skill-name">XAMPP</span></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="section-label">Projets</div>
+  <h2 class="section-title">Ce que j'ai <em>réalisé</em></h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-card-header" style="--c1:#C4714A33;--c2:#E8DDD055;">🏫</div>
+      <div class="project-card-body">
+        <span class="project-status status-done">Terminé</span>
+        <div class="project-name">Réservation de Ressources Universitaires</div>
+        <p class="project-desc">Application web permettant la gestion et la réservation des ressources universitaires (salles, équipements) en ligne.</p>
+        <div class="project-tags">
+          <span class="project-tag">Web</span>
+          <span class="project-tag">SQL</span>
+          <span class="project-tag">JavaScript</span>
+        </div>
+        <!-- Remplace # par le lien GitHub de ton projet -->
+        <a href="#" class="project-link">Voir le projet →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-header" style="--c1:#3D2B1F22;--c2:#C4714A22;">✈️</div>
+      <div class="project-card-body">
+        <span class="project-status status-done">Terminé</span>
+        <div class="project-name">Gestion des Vols</div>
+        <p class="project-desc">Application de gestion des vols d'une compagnie aérienne — suivi des horaires, réservations et gestion du personnel navigant.</p>
+        <div class="project-tags">
+          <span class="project-tag">Java</span>
+          <span class="project-tag">OracleSQL</span>
+          <span class="project-tag">Base de données</span>
+        </div>
+        <!-- Remplace # par le lien GitHub de ton projet -->
+        <a href="#" class="project-link">Voir le projet →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-header" style="--c1:#D4906A22;--c2:#FAF7F244;">👗</div>
+      <div class="project-card-body">
+        <span class="project-status status-upcoming">À venir</span>
+        <div class="project-name">E-commerce Mode Femme</div>
+        <p class="project-desc">Plateforme e-commerce de vêtements pour femmes — catalogue produits, panier, et gestion des commandes. Projet en cours.</p>
+        <div class="project-tags">
+          <span class="project-tag">Web</span>
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">CSS</span>
+        </div>
+        <span style="font-size:0.78rem;color:var(--muted);">Bientôt disponible</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Travaillons <em>ensemble</em></h2>
+    <p class="contact-desc">Vous avez un projet, une opportunité de stage, ou simplement envie d'échanger ? N'hésitez pas à me laisser un message.</p>
+
+    <!-- Pour activer le formulaire, connecte-le à Formspree : https://formspree.io -->
+    <!-- Remplace "YOUR_FORM_ID" par ton ID Formspree dans l'action ci-dessous -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="contact-grid">
+        <div class="form-group">
+          <label>Prénom & Nom</label>
+          <input type="text" name="name" placeholder="Jean Dupont" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="email@exemple.com" required>
+        </div>
+        <div class="form-group">
+          <label>Sujet</label>
+          <input type="text" name="subject" placeholder="Opportunité de stage, Collaboration...">
+        </div>
+        <div class="form-group"></div>
+        <div class="form-group full">
+          <label>Message</label>
+          <textarea name="message" placeholder="Votre message ici..." required></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%">Envoyer le message</button>
+    </form>
+
+    <div class="contact-email">
+      <span>📧</span>
+      <span>Ou directement : <a href="mailto:melissa.ibegdidene@se.univ-bejaia.dz">melissa.ibegdidene@se.univ-bejaia.dz</a></span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Melissa Ibegdidene</span>
+  <a href="mailto:melissa.ibegdidene@se.univ-bejaia.dz">melissa.ibegdidene@se.univ-bejaia.dz</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --bg-color: white;
+            --txt-color: black;
+            --primary-color: pink;
+        }
+
+        [data-theme="dark"]{
+            --bg-color: rgb(14, 14, 27);
+            --txt-color: white;
+            --primary-color: rgb(237, 108, 129);
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--bg-color);
+            color: var(--txt-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        button{
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Let's test this out :) </h1>
+    <button id="theme-toggle">here!</button>
+</body>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    //check if he already has saved a theme
+    const savedTheme = localStorage.getItem('theme');
+    if(savedTheme==='dark'){
+        body.setAttribute('data-theme', 'dark');
+    }
+
+
+    themeToggle.addEventListener('click', ()=>{
+        if (body.getAttribute('data-theme')==='dark'){
+            body.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+        }else{
+            body.setAttribute('data-theme','dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    }
+    );
+
+</script>
+</html>

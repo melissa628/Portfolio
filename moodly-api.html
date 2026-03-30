@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Moodly Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 50px; }
+    button { padding: 5px 10px; font-size: 14px; cursor: pointer; margin-left: 10px; }
+    .load-btn { padding: 10px 20px; font-size: 16px; margin-bottom: 20px; }
+    #result { padding: 15px; background: #f4f4f4; border-radius: 5px; max-width: 400px; }
+    li { margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+  </style>
+</head>
+<body>
+
+<h1>Moodly Categories</h1>
+<button class="load-btn" onclick="fetchCategories()">Load Categories</button>
+
+<div id="result">The categories will appear here...</div>
+
+<script>
+// 1. Fetch and Display Categories
+async function fetchCategories() {
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = "Loading...";
+
+    try {
+        // Here is the new Ngrok URL with the special header!
+        const response = await fetch('https://smokeproof-semiproductively-eleanor.ngrok-free.dev/api/categories', {
+            method: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true' // This bypasses the Ngrok free tier warning screen
+            }
+        });
+
+        const categories = await response.json();
+        
+        // Build the HTML safely
+        let htmlContent = "<ul>";
+        categories.forEach(cat => {
+            htmlContent += `
+                <li>
+                    ${cat.name} 
+                    <button 
+                        data-id="${cat.id}" 
+                        data-name="${cat.name}" 
+                        onclick="editCategory(this)">
+                        Edit
+                    </button>
+                </li>`;
+        });
+        htmlContent += "</ul>";
+        
+        resultDiv.innerHTML = htmlContent;
+
+    } catch (error) {
+        resultDiv.innerHTML = "Error connecting to Java backend!";
+        console.error(error);
+    }
+}
+
+</script>
+</body>
+</html>

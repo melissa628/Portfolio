@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Test Bilingue Melissa</title>
+
+    <style>
+
+        /* BASE : On cache l'anglais par défaut */
+
+        [lang="en"] { 
+
+            display: none; 
+
+        }
+
+
+
+        /* ÉTAT FRANÇAIS (Par défaut) */
+
+        body:not(.lang-en) [lang="fr"] {
+
+            display: inline-block;
+
+        }
+
+
+
+        /* ÉTAT ANGLAIS (Quand la classe est active) */
+
+        body.lang-en [lang="en"] {
+
+            display: inline-block;
+
+        }
+
+        body.lang-en [lang="fr"] {
+
+            display: none;
+
+        }
+
+
+
+
+      
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <h1>
+
+        <span lang="en">Lezgooo :3!</span>
+
+        <span lang="fr">On y vaa :3!</span>
+
+    </h1>
+
+
+
+    <button id="lang-toggle" style="padding: 10px 20px; cursor: pointer;">
+
+        <span lang="en">here!</span>
+
+        <span lang="fr">ici!</span>
+
+    </button>
+
+
+
+    <script>
+
+        const langToggle = document.getElementById('lang-toggle');
+
+        const body = document.body;
+
+
+
+        // Utilisons un try/catch au cas où le localStorage est bloqué par le navigateur
+
+        try {
+
+            const savedLang = localStorage.getItem('language');
+
+            if (savedLang === 'en') {
+
+                body.classList.add('lang-en');
+
+            }
+
+        } catch (e) {
+
+            console.log("LocalStorage inaccessible sur ce navigateur");
+
+        }
+
+
+
+        langToggle.addEventListener('click', () => {
+
+            body.classList.toggle('lang-en');
+
+            const isEnglish = body.classList.contains('lang-en');
+
+            try {
+
+                localStorage.setItem('language', isEnglish ? 'en' : 'fr');
+
+            } catch (e) {}
+
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark" data-lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></head>
+<body>
+
+    <nav>
+        <div class="nav-logo">MI<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#projects" data-fr="Projets" data-en="Projects">Projets</a></li>
+            <li><a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a></li>
+            <li><a href="#timeline" data-fr="Parcours" data-en="Journey">Parcours</a></li>
+            <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button class="ctrl-btn" id="langToggle">EN</button>
+            <button class="ctrl-btn" id="themeToggle"><i class="bi bi-sun" id="themeIcon"></i></button>
+        </div>
+    </nav>
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-eyebrow" data-fr="Ingénieure Logiciel · Université de Béjaia" data-en="Software Engineer · University of Béjaia">
+            Ingénieure Logiciel · Université de Béjaia
+        </div>
+        <h1 class="hero-name">Melissa<br><em>Ibegdidene</em></h1>
+        <p class="hero-tagline">
+            <span data-fr="Je construis des <strong>systèmes logiciels robustes</strong> qui transforment des problèmes complexes en solutions élégantes. ING 3 · Génie Logiciel." data-en="I build <strong>robust software systems</strong> that transform complex problems into elegant solutions. 3rd year · Software Engineering.">
+            Je construis des <strong>systèmes logiciels robustes</strong> qui transforment des problèmes complexes en solutions élégantes. ING 3 · Génie Logiciel.
+            </span>
+        </p>
+        <div class="hero-cta">
+            <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})" data-fr="Voir mes projets" data-en="View my work">
+            Voir mes projets
+            </button>
+            <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-fr="Me contacter" data-en="Get in touch">
+            Me contacter
+            </button>
+        </div>
+
+        </div>
+        <div class="hero-scroll">
+        <div class="scroll-line"></div>
+            <span data-fr="Defiler" data-en="Scroll" >Défiler</span>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-num">3
+                </span>
+                <span class="stat-label" data-fr="Projets majeurs" data-en="Major projects">Projets majeurs</span>
+
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">6+</span>
+                <span class="stat-label" data-fr="Technologies" data-en="Technologies">Technologies</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">ING3</span>
+                <span class="stat-label" data-fr="Niveau actuel" data-en="Current level">Niveau actuel</span>
+            </div>
+        </div>
+    </section>
+
+<!--my projectsssss-->
+
+    <section id="projects">
+        <div class="section-label" data-fr="Projets sélectionnés" data-en="Selected work">Projets sélectionnés</div>
+        <h2 class="section-title reveal" data-fr="Ce que j'ai <em>construit</em>" data-en="What I've <em>built</em>">Ce que j'ai <em>construit</em></h2>
+        <div class="projects-grid">
+            <div class="project-card featured reveal">
+                <div class="featured-left">
+                    <div class="project-num">01</div>
+                    <div class="project-badge" data-fr="Projet phare" data-en="Featured">Projet phare</div>
+                    <div class="project-title" data-fr="Système de Gestion de Vols" data-en="Flight Management System">Système de Gestion de Vols</div>
+                    <p class="project-desc" data-fr="Application desktop de gestion des opérations aériennes, développée en Java Swing et MySQL. Inclut une authentification admin, la gestion CRUD des avions & pilotes, et un planificateur de vols avec détection des conflits. Interface Nimbus connectée à MySQL via JDBC." data-en="Desktop application for airline operations management, built with Java Swing and MySQL. Features admin authentication, aircraft & pilot CRUD, and a flight scheduler with conflict detection. Clean Nimbus UI connected to a MySQL database via JDBC.">
+                    Application desktop de gestion des opérations aériennes, développée en Java Swing et MySQL. Inclut une authentification admin, la gestion CRUD des avions & pilotes, et un planificateur de vols avec détection des conflits. Interface Nimbus connectée à MySQL via JDBC.
+                    </p>
+                    <div class="project-tags">
+                        
+                        <span class="tag">Java</span>
+                        <span class="tag">JavaSwing</span>
+                        <span class="tag">JDBC</span>               
+                        <span class="tag">PL/SQL</span>
+
+                    </div>
+                </div>
+                <div class="featured-visual">
+                    <svg class="plane-svg" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 40 L60 10 L80 40 L60 70 L5 40Z" fill="none" stroke="#7c6ff7" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M5 40 L95 40" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4 3"/>
+                        <path d="M60 10 L60 70" stroke="#7c6ff7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4"/>
+                        <circle cx="80" cy="40" r="6" fill="#7c6ff7" opacity="0.3"/>
+                        <circle cx="80" cy="40" r="3" fill="#a78bfa"/>
+                        <path d="M20 35 L40 25 L45 40 L40 55 L20 45 Z" fill="#7c6ff7" opacity="0.15"/>
+                    </svg>
+                </div>
+            </div>
+        
+        <div class="project-card reveal">
+            <div class="project-num">02</div>
+            <div class="project-title" data-fr="Réservation de Ressources" data-en="Resource Booking System">Réservation de Ressources</div>
+            <p class="project-desc" data-fr="Système de réservation pour la gestion des ressources partagées (salles, équipements). Gestion des conflits de créneaux, historique et reporting via SQL avancé." data-en="Booking system for shared resource management (rooms, equipment). Slot conflict management, history tracking and advanced SQL reporting.">
+                Système de réservation pour la gestion des ressources partagées (salles, équipements). Gestion des conflits de créneaux, historique et reporting via SQL avancé.
+            </p>
+            <div class="project-tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JS</span>
+               <span class="tag">PHP</span>
+               <span class="tag">PL/SQL</span>
+            </div>
+        </div>
+
+        <div class="project-card reveal">
+            <div class="project-num">03</div>
+            <div class="project-badge" data-fr="Bientot disponible" data-en="Available soon">Bientot disponible</div>
+            <div class="project-title" data-fr="Plateforme E-commerce" data-en="E-commerce Platform">Plateforme E-commerce</div>
+            <p class="project-desc" data-fr="Application e-commerce avec catalogue produits, panier, gestion des commandes et tableau de bord administrateur. Stack web moderne avec back-end robuste." data-en="E-commerce application with product catalog, cart, order management and admin dashboard. Modern web stack with robust back-end.">
+                Application e-commerce avec catalogue produits, panier, gestion des commandes et tableau de bord administrateur. Stack web moderne avec back-end robuste.
+            </p>
+            <div class="project-tags">
+                
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">PostgresSQL</span>
+                <span class="tag">JS</span>
+            </div>
+        </div></div>
+    </section>
+    <!--my skills-->
+    <section id="skills">
+        <div class="section-label" data-fr="Arsenal technique" data-en="Technical stack">Arsenal technique</div>
+        <h2 class="section-title reveal" data-fr="Mes <em>compétences</em>" data-en="My <em>skills</em>">Mes <em>compétences</em></h2>
+        <div class="skills-layout">
+            <div>
+                <div class="skill-group-title" data-fr="Langages & Dev" data-en="Langages & Dev">Langages & Dev </div>
+                <div class="skill-item">
+                    <div class="skill-header"><span class="skill-name">Java</span><span class="skill-pct">88%</span></div>
+                    <div class="skill-track"><div class="skill-fill" style="--pct:88%"></div></div>
+    
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header"><span class="skill-name">C</span><span class="skill-pct">82%</span></div>
+                    <div class="skill-track"><div class="skill-fill" style="--pct:82%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header"><span class="skill-name">C++</span><span class="skill-pct">75%</span></div>
+                    <div class="skill-track"><div class="skill-fill" style="--pct:75%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header"><span class="skill-name">Python</span><span class="skill-pct">70%</span></div>
+                    <div class="skill-track"><div class="skill-fill" style="--pct:70%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header"><span class="skill-name">HTML / CSS / JS</span><span class="skill-pct">72%</span></div>
+                    <div class="skill-track"><div class="skill-fill" style="--pct:72%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header"><span class="skill-name">MATLAB</span><span class="skill-pct">65%</span></div>
+                    <div class="skill-track"><div class="skill-fill" style="--pct:65%"></div></div>
+                </div>
+                </div>
+                <div>
+                <div class="skill-group-title" data-fr="Bases de données & Outils" data-en="Databases & Tools">Bases de données & Outils</div>
+                <div class="skill-item">
+                    <div class="skill-header"><span class="skill-name">Oracle SQL</span><span class="skill-pct">90%</span></div>
+                    <div class="skill-track"><div class="skill-fill" style="--pct:90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header"><span class="skill-name">PL/SQL</span><span class="skill-pct">84%</span></div>
+                    <div class="skill-track"><div class="skill-fill" style="--pct:84%"></div></div>
+                </div>
+                <div class="tools-grid" style="margin-top:2rem">
+                    <div class="tool-chip"><span class="tool-icon"><i class="fa-brands fa-java"></i></span>Java</div>
+                    <div class="tool-chip"><span class="tool-icon"><i class="bi bi-database"></i></span>Oracle DB</div>
+                    <div class="tool-chip"><span class="tool-icon"><i class="fa-brands fa-python" ></i></span>Python</div>
+                    <div class="tool-chip"><span class="tool-icon"><i class="bi bi-gear"></i></span>C / C++</div>
+                    <div class="tool-chip"><span class="tool-icon"><i class="bi bi-clipboard-data"></i></span>MATLAB</div>
+                    <div class="tool-chip"><span class="tool-icon"><i class="bi bi-browser-edge"></i></span>Web Stack</div>
+                    <div class="tool-chip"><span class="tool-icon"><i class="bi bi-filetype-js"></i></span>JavaScript</div>
+                    <div class="tool-chip"><span class="tool-icon"><i class="bi bi-cast"></i></span>PL / SQL</div>
+                    <div class="tool-chip"><span class="tool-icon"><i class="bi bi-github"></i></span>Git</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--my timeline-->
+    <section id="timeline">
+        <div class="section-label" data-fr="Parcours académique" data-en="Academic journey">Parcours académique</div>
+        <h2 class="section-title reveal" data-fr="Mon <em>évolution</em>" data-en="My <em>journey</em>">Mon <em>évolution</em></h2>
+        <div class="timeline">
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">2025 — 2026</div>
+                <div class="tl-title" data-fr="ING 3 — Génie Logiciel" data-en="3rd Year — Software Engineering">ING 3 — Génie Logiciel</div>
+                <div class="tl-sub" data-fr="Université de Béjaïa · Spécialisation Génie Logiciel · Projets complexes & administration Oracle" data-en="University of Béjaïa · Software Engineering specialization · Complex projects & Oracle administration">Université de Béjaïa · Spécialisation Génie Logiciel · Projets complexes & administration Oracle</div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">2024 — 2025</div>
+                <div class="tl-title" data-fr="ING 2 — Informatique" data-en="2nd Year — Computer Science">ING 2 — Informatique</div>
+                <div class="tl-sub" data-fr="Algorithmes avancés, structures de données, développement Java & bases de données" data-en="Advanced algorithms, data structures, Java development & databases">Algorithmes avancés, structures de données, développement Java & bases de données</div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">2023 — 2024</div>
+                <div class="tl-title" data-fr="ING 1 — Informatique" data-en="1st Year — Computer Science">ING 1 — Informatique</div>
+                <div class="tl-sub" data-fr="Fondamentaux de la programmation · C, algorithmique, mathématiques appliquées" data-en="Programming fundamentals · C, algorithms, applied math">Fondamentaux de la programmation · C, algorithmique, mathématiques appliquées</div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">2023</div>
+                <div class="tl-title" data-fr="Baccalauréat — Série Sciences" data-en="Baccalaureate — Science">Baccalauréat — Série Sciences</div>
+                <div class="tl-sub" data-fr="Admise à l'École d'Ingénierie · Université de Béjaïa" data-en="Admitted to Engineering School · University of Béjaïa">Admise à l'École d'Ingénierie · Université de Béjaïa</div>
+            </div>
+        </div>
+    </section>
+
+    <!--to contact mee-->
+    <section id="contact">
+        <div class="section-label" data-fr="Me contacter" data-en="Get in touch">Me contacter</div>
+        <h2 class="section-title reveal" data-fr="Travaillons <em>ensemble</em>" data-en="Let's work <em>together</em>">Travaillons <em>ensemble</em></h2>
+        <div class="contact-wrap">
+            <div class="contact-info">
+                <p data-fr="Ouverte aux opportunités de stage, aux collaborations sur des projets tech et aux échanges autour du Génie Logiciel. N'hésitez pas à me contacter !" data-en="Open to internship opportunities, tech project collaborations and discussions about Software Engineering. Feel free to reach out!">
+                    Ouverte aux opportunités de stage, aux collaborations sur des projets tech et aux échanges autour du Génie Logiciel. N'hésitez pas à me contacter !
+                </p>
+                <a href="https://github.com/melissa628" target="_blank" class="contact-link">
+                    <div class="contact-link-icon"><i class="bi bi-github"></i></div>
+                    <span>GitHub · melissa-ibegdidene</span>
+                </a>
+                <a href="mailto:melissa.ibegdidene@univ-bejaia.dz" class="contact-link">
+                    <div class="contact-link-icon"><i class="bi bi-envelope-at"></i></div>
+                    <span>melissa.ibegdidene@se.univ-bejaia.dz</span>
+                </a>
+                <a href="#" class="contact-link">
+                    <div class="contact-link-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                    <span data-fr="Béjaïa, Algérie" data-en="Béjaïa, Algeria">Béjaïa, Algérie</span>
+                </a>
+            </div>
+            <form onsubmit="return false;">
+                <div class="form-group">
+                    <label data-fr="Votre nom" data-en="Your name">Votre nom</label>
+                    <input type="text" class="form-control" placeholder="Kassi Abdelkader">
+                </div>
+                <div class="form-group"> <!--i should not forget to add "Merci pour votre message !"-->
+                    <label data-fr="Email" data-en="Email">Email</label>
+                    <input type="email" class="form-control" placeholder="hello@example.com">
+                </div>
+                <div class="form-group">
+                    <label data-fr="Message" data-en="Message">Message</label>
+                    <textarea class="form-control" rows="4" placeholder="..."></textarea>
+                </div>
+                <button class="btn-primary" style="width:100%;margin-top:0.5rem" data-fr="Envoyer le message" data-en="Send message">Envoyer le message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <span>© 2026 Melissa Ibegdidene</span>
+        <span data-fr="Conçu avec intention · Béjaïa, Algérie" data-en="Crafted with intention · Béjaïa, Algeria">Conçu avec intention · Béjaïa, Algérie</span>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('ZxSxHEvwJC7MGv_LV');</script>
+<script src="portfolio.js" defer></script>
+
+</body>
+</html>
