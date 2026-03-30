@@ -3,7 +3,7 @@
 A personal website showcasing my skills, projects, and journey as a Software Engineering student. 
 
 ##  Live Demo
-You can view the live site here:
+You can view the live site here: https://melissa628.github.io/Portfolio/
 
 ##  Features
 * **Modern UI:** Built with a clean, responsive design.
@@ -32,7 +32,7 @@ Let's connect!
 Un site web personnel présentant mes compétences, mes projets et mon parcours en tant qu'étudiante en Génie Logiciel à l'Université de Béjaïa.
 
 ##  Démo en Direct
-Vous pouvez consulter le site ici : 
+Vous pouvez consulter le site ici : https://melissa628.github.io/Portfolio/
 
 ##  Fonctionnalités
 * **Design Moderne :** Interface épurée et responsive avec une approche néomorphique.
