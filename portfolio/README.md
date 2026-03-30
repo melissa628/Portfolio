@@ -24,3 +24,33 @@ You can view the live site here:
 ##  Contact
 Let's connect! 
 * **GitHub:** https://github.com/melissa628
+
+
+
+# Mon Portfolio Professionnel
+
+Un site web personnel présentant mes compétences, mes projets et mon parcours en tant qu'étudiante en Génie Logiciel à l'Université de Béjaïa.
+
+##  Démo en Direct
+Vous pouvez consulter le site ici : 
+
+##  Fonctionnalités
+* **Design Moderne :** Interface épurée et responsive avec une approche néomorphique.
+* **Mode Sombre (Dark Mode) :** Support complet pour les préférences visuelles de l'utilisateur.
+* **Bilingue :** Changement fluide entre le Français et l'Anglais.
+* **Layout Responsive :** Optimisé pour mobile, tablette et bureau via CSS Flexbox/Grid.
+
+##  Technologies Utilisées
+* **HTML5 :** Structure sémantique pour un meilleur SEO et accessibilité.
+* **CSS3 :** Styles personnalisés, variables CSS et animations avancées.
+* **JavaScript (Vanilla) :** Logique pour le sélecteur de thème et la gestion du bilinguisme.
+
+##  Structure du Projet
+* `index.html` - Point d'entrée principal.
+* `portfolio.css` - Feuilles de style et variables de design.
+* `portfolio.js` - Scripts pour l'interactivité.
+
+##  Contact
+Restons en contact !
+* **LinkedIn :** [Lien vers votre profil]
+* **GitHub :** https://github.com/melissa628
