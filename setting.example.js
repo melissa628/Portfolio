@@ -1,0 +1,6 @@
+const CONFIG = {
+    EMAILJS_SERVICE: '',
+    EMAILJS_TEMPLATE: '',
+    EMAILJS_PUBLIC_KEY: '', 
+    RECEIVER_NAME: ''
+};

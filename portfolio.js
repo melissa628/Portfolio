@@ -1,3 +1,15 @@
+
+
+if (typeof CONFIG === 'undefined') {
+    console.warn("CONFIG is missing. Falling back to default values.");
+    var CONFIG = {
+        EMAILJS_SERVICE: 'default',
+        EMAILJS_TEMPLATE: 'default',
+        EMAILJS_PUBLIC_KEY: '',
+        RECEIVER_NAME: 'Admin'
+    };
+}
+
 emailjs.init(CONFIG.EMAILJS_PUBLIC_KEY);
 const themeBtn = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
