@@ -52,13 +52,10 @@ themeBtn.addEventListener('click', () => {
     navLinks.forEach(a=>{ a.style.color = a.getAttribute('href')==='#'+current ? 'var(--accent)' : ''; });
   });
 
-const CONFIG = {
-    EMAILJS_SERVICE: 'service_melissa',
-    EMAILJS_TEMPLATE: 'template_melissa',
-    EMAILJS_PUBLIC_KEY: 'ZxSxHEvwJC7MGv_LV', 
-    RECEIVER_NAME: 'Melissa'
-};
 
+
+const EMAILJS_SERVICE  = 'service_melissa';
+const EMAILJS_TEMPLATE = 'template_melissa';
 
 const form = document.querySelector('#contact form');
 const btn  = form.querySelector('.btn-primary');
@@ -153,11 +150,11 @@ form.addEventListener('submit', (e) => {
   btn.style.opacity = '0.7';
 
   
-  emailjs.send(CONFIG.EMAILJS_SERVICE, CONFIG.EMAILJS_TEMPLATE, {
+  emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, {
     from_name:  name.value.trim(),
     from_email: email.value.trim(),
     message:    msg.value.trim(),
-    to_name:    CONFIG.RECEIVER_NAME,
+    to_name:    'Melissa',
   })
   .then(() => {
     showBanner(m.success);
