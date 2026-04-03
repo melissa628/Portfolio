@@ -1,3 +1,4 @@
+emailjs.init(CONFIG.EMAILJS_PUBLIC_KEY);
 const themeBtn = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
 
