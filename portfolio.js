@@ -1,16 +1,3 @@
-
-
-if (typeof CONFIG === 'undefined') {
-    console.warn("CONFIG is missing. Falling back to default values.");
-    var CONFIG = {
-        EMAILJS_SERVICE: 'default',
-        EMAILJS_TEMPLATE: 'default',
-        EMAILJS_PUBLIC_KEY: '',
-        RECEIVER_NAME: 'Admin'
-    };
-}
-
-emailjs.init("ZxSxHEvwJC7MGv_LV");
 const themeBtn = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
 
@@ -65,6 +52,12 @@ themeBtn.addEventListener('click', () => {
     navLinks.forEach(a=>{ a.style.color = a.getAttribute('href')==='#'+current ? 'var(--accent)' : ''; });
   });
 
+const CONFIG = {
+    EMAILJS_SERVICE: 'service_melissa',
+    EMAILJS_TEMPLATE: 'template_melissa',
+    EMAILJS_PUBLIC_KEY: 'ZxSxHEvwJC7MGv_LV', 
+    RECEIVER_NAME: 'Melissa'
+};
 
 
 const form = document.querySelector('#contact form');
