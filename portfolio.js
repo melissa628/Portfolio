@@ -54,9 +54,6 @@ themeBtn.addEventListener('click', () => {
 
 
 
-const EMAILJS_SERVICE  = 'service_melissa';
-const EMAILJS_TEMPLATE = 'template_melissa';
-
 const form = document.querySelector('#contact form');
 const btn  = form.querySelector('.btn-primary');
 
@@ -150,11 +147,11 @@ form.addEventListener('submit', (e) => {
   btn.style.opacity = '0.7';
 
   
-  emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, {
+  emailjs.send(CONFIG.EMAILJS_SERVICE, CONFIG.EMAILJS_TEMPLATE, {
     from_name:  name.value.trim(),
     from_email: email.value.trim(),
     message:    msg.value.trim(),
-    to_name:    'Melissa',
+    to_name:    CONFIG.RECEIVER_NAME,
   })
   .then(() => {
     showBanner(m.success);
